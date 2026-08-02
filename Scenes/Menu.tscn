@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cj1njp2p3awpg"]
+
+[ext_resource type="Script" uid="uid://cvf2tpxx7ygqs" path="res://Scenes/menu.gd" id="1_3kf3n"]
+
+[node name="Menu" type="Control" unique_id=352346712]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kf3n")
+
+[node name="Button" type="Button" parent="." unique_id=320701614]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 122.0
+offset_right = 134.0
+offset_bottom = 130.0
+text = "Jugar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
