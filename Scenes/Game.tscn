@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cpeyrmpv60jue" path="res://Scripts/NoteHitter.gd" id="4_b2bpf"]
 [ext_resource type="Script" uid="uid://d1ewsb8u1h7u4" path="res://Scripts/NoteObjectPool.gd" id="4_kldst"]
 [ext_resource type="Script" uid="uid://bhbd61aurmh2k" path="res://Scripts/Conductor.gd" id="5_7lihs"]
+[ext_resource type="Texture2D" uid="uid://bmete415sivdq" path="res://icon.svg" id="6_2irst"]
 [ext_resource type="AudioStream" uid="uid://cp4nbrsapwbe7" path="res://Music/20 - Ccc.mp3" id="6_fgofq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m50do"]
@@ -29,9 +30,12 @@ texture = ExtResource("1_iukft")
 position = Vector2(-448, 110)
 scale = Vector2(5.05598, 5.05598)
 script = ExtResource("4_b2bpf")
-input_action = "carril_abajo"
+input_action = "carril_arriba"
 
 [node name="Sprite2D" type="Sprite2D" parent="HitArea" unique_id=1407262209]
+position = Vector2(8.109209, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_2irst")
 
 [node name="OkayArea" type="Area2D" parent="HitArea" unique_id=29055022]
 position = Vector2(14.042776, 0.19778557)
@@ -60,39 +64,42 @@ scale = Vector2(0.5516987, 0.5516987)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/FailArea" unique_id=1701005794]
 shape = SubResource("CircleShape2D_m50do")
 
-[node name="HitArea2" type="Node2D" parent="." unique_id=160690114]
-position = Vector2(-447, 215)
+[node name="HitArea2" type="Node2D" parent="." unique_id=825949349]
+position = Vector2(-448, 209)
 scale = Vector2(5.05598, 5.05598)
 script = ExtResource("4_b2bpf")
-input_action = "carril_arriba"
+input_action = "carril_abajo"
 
-[node name="Sprite2D" type="Sprite2D" parent="HitArea2" unique_id=1726730124]
+[node name="Sprite2D" type="Sprite2D" parent="HitArea2" unique_id=1379576151]
+position = Vector2(7.5158525, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_2irst")
 
-[node name="OkayArea" type="Area2D" parent="HitArea2" unique_id=1372880268]
+[node name="OkayArea" type="Area2D" parent="HitArea2" unique_id=1752395513]
 position = Vector2(14.042776, 0.19778557)
 scale = Vector2(0.43553934, 0.43553934)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/OkayArea" unique_id=1846702745]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/OkayArea" unique_id=410283886]
 shape = SubResource("CircleShape2D_m50do")
 
-[node name="GoodArea" type="Area2D" parent="HitArea2" unique_id=772816579]
+[node name="GoodArea" type="Area2D" parent="HitArea2" unique_id=2018293684]
 position = Vector2(7.9114237, 0.5933567)
 scale = Vector2(-0.16968697, -0.16968697)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/GoodArea" unique_id=1576511354]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/GoodArea" unique_id=1420191268]
 shape = SubResource("CircleShape2D_m50do")
 
-[node name="PerfectArea" type="Area2D" parent="HitArea2" unique_id=404897066]
+[node name="PerfectArea" type="Area2D" parent="HitArea2" unique_id=1191320878]
 scale = Vector2(-0.5953481, -0.5953481)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/PerfectArea" unique_id=549049056]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/PerfectArea" unique_id=1540784107]
 shape = SubResource("CircleShape2D_m50do")
 
-[node name="FailArea" type="Area2D" parent="HitArea2" unique_id=1537186975]
+[node name="FailArea" type="Area2D" parent="HitArea2" unique_id=239985784]
 position = Vector2(-12.0649185, 0.39557114)
 scale = Vector2(0.5516987, 0.5516987)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/FailArea" unique_id=2036337972]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/FailArea" unique_id=1103408180]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1879596580 node_paths=PackedStringArray("note_pool")]
@@ -110,5 +117,19 @@ offset_right = 1.0
 offset_bottom = -2.0
 text = "Jugar"
 
+[connection signal="area_entered" from="HitArea/OkayArea" to="HitArea" method="_on_okay_area_area_entered"]
+[connection signal="area_exited" from="HitArea/OkayArea" to="HitArea" method="_on_okay_area_area_exited"]
+[connection signal="area_entered" from="HitArea/GoodArea" to="HitArea" method="_on_good_area_area_entered"]
+[connection signal="area_exited" from="HitArea/GoodArea" to="HitArea" method="_on_good_area_area_exited"]
+[connection signal="area_entered" from="HitArea/PerfectArea" to="HitArea" method="_on_perfect_area_area_entered"]
+[connection signal="area_exited" from="HitArea/PerfectArea" to="HitArea" method="_on_perfect_area_area_exited"]
+[connection signal="area_entered" from="HitArea/FailArea" to="HitArea" method="_on_fail_area_area_entered"]
+[connection signal="area_entered" from="HitArea2/OkayArea" to="HitArea2" method="_on_okay_area_area_entered"]
+[connection signal="area_exited" from="HitArea2/OkayArea" to="HitArea2" method="_on_okay_area_area_exited"]
+[connection signal="area_entered" from="HitArea2/GoodArea" to="HitArea2" method="_on_good_area_area_entered"]
+[connection signal="area_exited" from="HitArea2/GoodArea" to="HitArea2" method="_on_good_area_area_exited"]
+[connection signal="area_entered" from="HitArea2/PerfectArea" to="HitArea2" method="_on_perfect_area_area_entered"]
+[connection signal="area_exited" from="HitArea2/PerfectArea" to="HitArea2" method="_on_perfect_area_area_exited"]
+[connection signal="area_entered" from="HitArea2/FailArea" to="HitArea2" method="_on_fail_area_area_entered"]
 [connection signal="timeout" from="AudioStreamPlayer/StartTimer" to="AudioStreamPlayer" method="_on_start_timer_timeout"]
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_pressed"]

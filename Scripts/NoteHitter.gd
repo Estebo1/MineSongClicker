@@ -51,3 +51,7 @@ func _reset() -> void:
 	perfect = false
 	good = false
 	okay = false
+
+
+func _on_fail_area_area_entered(area: Area2D) -> void:
+	pass 
