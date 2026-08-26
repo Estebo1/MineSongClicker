@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs0afck3f0xcp"
+path="res://.godot/imported/82 - Gurgle.mp3-8d9c84005c20cdf896ede21c6d085536.mp3str"
+
+[deps]
+
+source_file="res://Music/82 - Gurgle.mp3"
+dest_files=["res://.godot/imported/82 - Gurgle.mp3-8d9c84005c20cdf896ede21c6d085536.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

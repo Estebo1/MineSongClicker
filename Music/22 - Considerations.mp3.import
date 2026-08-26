@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c06na2drj6ffp"
+path="res://.godot/imported/22 - Considerations.mp3-7d8e5f953c172b6501917f9ba1e5868b.mp3str"
+
+[deps]
+
+source_file="res://Music/22 - Considerations.mp3"
+dest_files=["res://.godot/imported/22 - Considerations.mp3-7d8e5f953c172b6501917f9ba1e5868b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

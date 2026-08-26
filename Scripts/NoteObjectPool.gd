@@ -11,19 +11,17 @@ func _ready() -> void:
 		add_child(note_instance)
 		pool.append(note_instance)
 
-func spawn_note(spawn_position: Vector2):
+func spawn_note(lane: int):
 	for note in pool:
 		if not note.isActive:
-			note.position = spawn_position
-			note.ActivateNote()
+			note.ActivateNote(lane)
 			return note
 			
 	var new_note = note_scene.instantiate()
 	add_child(new_note)
 	pool.append(new_note) 
 	
-	new_note.position = spawn_position
-	new_note.ActivateNote()
+	new_note.ActivateNote(lane)
 	
 	print("AumentaPool ", pool.size())
 	return new_note
@@ -32,4 +30,4 @@ func spawn_note(spawn_position: Vector2):
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			spawn_note(Vector2(0.0,0.0))
+			spawn_note(1)

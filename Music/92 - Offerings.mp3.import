@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk1vekcv8jhrm"
+path="res://.godot/imported/92 - Offerings.mp3-ad56148368890fd13801b7ad158f8d7a.mp3str"
+
+[deps]
+
+source_file="res://Music/92 - Offerings.mp3"
+dest_files=["res://.godot/imported/92 - Offerings.mp3-ad56148368890fd13801b7ad158f8d7a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcsx8xfwuh6et"
+path="res://.godot/imported/44 - Tidy.mp3-ca140eeeba9c6f6d86f97de5a7b811ae.mp3str"
+
+[deps]
+
+source_file="res://Music/44 - Tidy.mp3"
+dest_files=["res://.godot/imported/44 - Tidy.mp3-ca140eeeba9c6f6d86f97de5a7b811ae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

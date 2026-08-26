@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcm0wyu87emp8"
+path="res://.godot/imported/48 - Stable.mp3-f853f7ea70bb363caa16a204f201363d.mp3str"
+
+[deps]
+
+source_file="res://Music/48 - Stable.mp3"
+dest_files=["res://.godot/imported/48 - Stable.mp3-f853f7ea70bb363caa16a204f201363d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

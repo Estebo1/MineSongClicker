@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://40kp76h6dyf0"
+path="res://.godot/imported/03 - The Felted Edge.mp3-432e8dbd519a69d0911e187a5d0f3630.mp3str"
+
+[deps]
+
+source_file="res://Music/03 - The Felted Edge.mp3"
+dest_files=["res://.godot/imported/03 - The Felted Edge.mp3-432e8dbd519a69d0911e187a5d0f3630.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wpkx6kwrsfit"
+path="res://.godot/imported/78 - Everything's Fine.mp3-e616ef947ab365f83938dd9bde9d60ef.mp3str"
+
+[deps]
+
+source_file="res://Music/78 - Everything's Fine.mp3"
+dest_files=["res://.godot/imported/78 - Everything's Fine.mp3-e616ef947ab365f83938dd9bde9d60ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

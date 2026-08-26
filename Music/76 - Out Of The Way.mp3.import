@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be5lnydouuat3"
+path="res://.godot/imported/76 - Out Of The Way.mp3-e5780ab438fa4fe2772d29b5846c8106.mp3str"
+
+[deps]
+
+source_file="res://Music/76 - Out Of The Way.mp3"
+dest_files=["res://.godot/imported/76 - Out Of The Way.mp3-e5780ab438fa4fe2772d29b5846c8106.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

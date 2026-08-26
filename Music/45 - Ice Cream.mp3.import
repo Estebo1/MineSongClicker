@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjprekxxu8tqq"
+path="res://.godot/imported/45 - Ice Cream.mp3-8f737e7098a6b0ad5c94713bc184cc95.mp3str"
+
+[deps]
+
+source_file="res://Music/45 - Ice Cream.mp3"
+dest_files=["res://.godot/imported/45 - Ice Cream.mp3-8f737e7098a6b0ad5c94713bc184cc95.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

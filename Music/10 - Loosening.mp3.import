@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpe24hgkcsjqc"
+path="res://.godot/imported/10 - Loosening.mp3-9995c26091d26d7a9aef42be998263ad.mp3str"
+
+[deps]
+
+source_file="res://Music/10 - Loosening.mp3"
+dest_files=["res://.godot/imported/10 - Loosening.mp3-9995c26091d26d7a9aef42be998263ad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

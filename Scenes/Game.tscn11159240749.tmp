@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dhvth74aus2cx"]
+
+[ext_resource type="Script" uid="uid://bhw40eekshfsi" path="res://Scripts/Game.gd" id="1_7lihs"]
+[ext_resource type="Texture2D" uid="uid://d4enkd5efyppb" path="res://Sprites/Tools/Knife/Primitive_Knife-1.png" id="1_iukft"]
+[ext_resource type="PackedScene" uid="uid://bb6bjthymwv1b" path="res://Prefabs/note.tscn" id="3_j5yw3"]
+[ext_resource type="Script" uid="uid://cpeyrmpv60jue" path="res://Scripts/NoteHitter.gd" id="4_b2bpf"]
+[ext_resource type="Script" uid="uid://d1ewsb8u1h7u4" path="res://Scripts/NoteObjectPool.gd" id="4_kldst"]
+[ext_resource type="Script" uid="uid://bhbd61aurmh2k" path="res://Scripts/Conductor.gd" id="5_7lihs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m50do"]
+
+[node name="Game" type="Node2D" unique_id=749831401]
+script = ExtResource("1_7lihs")
+
+[node name="NoteObjectPool" type="Node2D" parent="." unique_id=457763157]
+script = ExtResource("4_kldst")
+note_scene = ExtResource("3_j5yw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161173379]
+texture_filter = 2
+position = Vector2(-250.99998, -82.99999)
+scale = Vector2(5, 5)
+texture = ExtResource("1_iukft")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1351070816]
+
+[node name="HitArea" type="Node2D" parent="." unique_id=788044359]
+position = Vector2(-448, 110)
+scale = Vector2(5.05598, 5.05598)
+script = ExtResource("4_b2bpf")
+input_action = "carril_abajo"
+
+[node name="Sprite2D" type="Sprite2D" parent="HitArea" unique_id=1407262209]
+
+[node name="OkayArea" type="Area2D" parent="HitArea" unique_id=29055022]
+position = Vector2(14.042776, 0.19778557)
+scale = Vector2(0.43553934, 0.43553934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/OkayArea" unique_id=1648482603]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="GoodArea" type="Area2D" parent="HitArea" unique_id=798618340]
+position = Vector2(7.9114237, 0.5933567)
+scale = Vector2(-0.16968697, -0.16968697)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/GoodArea" unique_id=1950018756]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="PerfectArea" type="Area2D" parent="HitArea" unique_id=1215332619]
+scale = Vector2(-0.5953481, -0.5953481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/PerfectArea" unique_id=866200848]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="FailArea" type="Area2D" parent="HitArea" unique_id=1136206067]
+position = Vector2(-12.0649185, 0.39557114)
+scale = Vector2(0.5516987, 0.5516987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/FailArea" unique_id=1701005794]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="HitArea2" type="Node2D" parent="." unique_id=160690114]
+position = Vector2(-447, 215)
+scale = Vector2(5.05598, 5.05598)
+script = ExtResource("4_b2bpf")
+input_action = "carril_arriba"
+
+[node name="Sprite2D" type="Sprite2D" parent="HitArea2" unique_id=1726730124]
+
+[node name="OkayArea" type="Area2D" parent="HitArea2" unique_id=1372880268]
+position = Vector2(14.042776, 0.19778557)
+scale = Vector2(0.43553934, 0.43553934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/OkayArea" unique_id=1846702745]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="GoodArea" type="Area2D" parent="HitArea2" unique_id=772816579]
+position = Vector2(7.9114237, 0.5933567)
+scale = Vector2(-0.16968697, -0.16968697)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/GoodArea" unique_id=1576511354]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="PerfectArea" type="Area2D" parent="HitArea2" unique_id=404897066]
+scale = Vector2(-0.5953481, -0.5953481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/PerfectArea" unique_id=549049056]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="FailArea" type="Area2D" parent="HitArea2" unique_id=1537186975]
+position = Vector2(-12.0649185, 0.39557114)
+scale = Vector2(0.5516987, 0.5516987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/FailArea" unique_id=2036337972]
+shape = SubResource("CircleShape2D_m50do")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1879596580 node_paths=PackedStringArray("note_pool")]
+script = ExtResource("5_7lihs")
+note_pool = NodePath("../NoteObjectPool")
+
+[node name="StartTimer" type="Timer" parent="AudioStreamPlayer" unique_id=1059434103]
+
+[node name="ButtonPlay" type="Button" parent="." unique_id=1718939568]
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = -2.0
+text = "Jugar"
+
+[connection signal="timeout" from="AudioStreamPlayer/StartTimer" to="AudioStreamPlayer" method="_on_start_timer_timeout"]
+[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_pressed"]

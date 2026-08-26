@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw4y6dbwbpryn"
+path="res://.godot/imported/33 - Ditty.mp3-457723127c2b8f9b13b86754b04b4532.mp3str"
+
+[deps]
+
+source_file="res://Music/33 - Ditty.mp3"
+dest_files=["res://.godot/imported/33 - Ditty.mp3-457723127c2b8f9b13b86754b04b4532.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

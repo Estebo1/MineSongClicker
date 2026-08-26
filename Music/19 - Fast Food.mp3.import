@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cf53tbwbd0o2g"
+path="res://.godot/imported/19 - Fast Food.mp3-386711a7fc7d0d46057ad541bc35e553.mp3str"
+
+[deps]
+
+source_file="res://Music/19 - Fast Food.mp3"
+dest_files=["res://.godot/imported/19 - Fast Food.mp3-386711a7fc7d0d46057ad541bc35e553.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

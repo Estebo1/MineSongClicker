@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w250tf8p3ryk"
+path="res://.godot/imported/13 - Just Our Luck.mp3-dfe01c4a8a7684f279a93e81444e8f48.mp3str"
+
+[deps]
+
+source_file="res://Music/13 - Just Our Luck.mp3"
+dest_files=["res://.godot/imported/13 - Just Our Luck.mp3-dfe01c4a8a7684f279a93e81444e8f48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

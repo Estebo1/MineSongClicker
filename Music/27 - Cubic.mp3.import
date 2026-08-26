@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baeu627xkjy0a"
+path="res://.godot/imported/27 - Cubic.mp3-273e4a5cd8eef2260fac2c70d30c9db6.mp3str"
+
+[deps]
+
+source_file="res://Music/27 - Cubic.mp3"
+dest_files=["res://.godot/imported/27 - Cubic.mp3-273e4a5cd8eef2260fac2c70d30c9db6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

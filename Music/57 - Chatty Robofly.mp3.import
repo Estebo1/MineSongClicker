@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djjdm8r6o3j8n"
+path="res://.godot/imported/57 - Chatty Robofly.mp3-16bf5eaacbbf7901e9f3aa8e66e5b29c.mp3str"
+
+[deps]
+
+source_file="res://Music/57 - Chatty Robofly.mp3"
+dest_files=["res://.godot/imported/57 - Chatty Robofly.mp3-16bf5eaacbbf7901e9f3aa8e66e5b29c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

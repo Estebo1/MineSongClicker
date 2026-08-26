@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dt4lwts7f67dr"
+path="res://.godot/imported/06 - Fell.mp3-30e269748c53daf4e486fe32fce16614.mp3str"
+
+[deps]
+
+source_file="res://Music/06 - Fell.mp3"
+dest_files=["res://.godot/imported/06 - Fell.mp3-30e269748c53daf4e486fe32fce16614.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvxgpsoxn3hx"
+path="res://.godot/imported/88 - Tug.mp3-d5cc7df21a027873c655ce55d9ee0427.mp3str"
+
+[deps]
+
+source_file="res://Music/88 - Tug.mp3"
+dest_files=["res://.godot/imported/88 - Tug.mp3-d5cc7df21a027873c655ce55d9ee0427.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7jvsgj0q6urp"
+path="res://.godot/imported/95 - Silver.mp3-1b20bf1fb9029eb58e5a56a86625e05e.mp3str"
+
+[deps]
+
+source_file="res://Music/95 - Silver.mp3"
+dest_files=["res://.godot/imported/95 - Silver.mp3-1b20bf1fb9029eb58e5a56a86625e05e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
