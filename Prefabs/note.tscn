@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bb6bjthymwv1b"]
+
+[ext_resource type="Script" uid="uid://cbr7ofwdykwmp" path="res://Scripts/note.gd" id="1_t7k46"]
+[ext_resource type="Texture2D" uid="uid://27dktnfjbl8n" path="res://Sprites/Icons/1 Icons/Icons_01.png" id="2_nerg5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m50do"]
+
+[node name="Note" type="Area2D" unique_id=400096373 node_paths=PackedStringArray("collisionShape")]
+scale = Vector2(10, 10)
+script = ExtResource("1_t7k46")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881825096]
+position = Vector2(0.100001335, 0.100001335)
+scale = Vector2(0.446875, 0.446875)
+texture = ExtResource("2_nerg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=251249863]
+shape = SubResource("CircleShape2D_m50do")
