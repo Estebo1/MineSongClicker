@@ -33,32 +33,33 @@ script = ExtResource("4_b2bpf")
 input_action = "carril_arriba"
 
 [node name="Sprite2D" type="Sprite2D" parent="HitArea" unique_id=1407262209]
-position = Vector2(8.109209, 0)
+position = Vector2(7.516, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_2irst")
 
 [node name="OkayArea" type="Area2D" parent="HitArea" unique_id=29055022]
-position = Vector2(14.042776, 0.19778557)
-scale = Vector2(0.43553934, 0.43553934)
+position = Vector2(0.3955719, 0.19778557)
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/OkayArea" unique_id=1648482603]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="GoodArea" type="Area2D" parent="HitArea" unique_id=798618340]
-position = Vector2(7.9114237, 0.5933567)
-scale = Vector2(-0.16968697, -0.16968697)
+position = Vector2(14.636133, 0.5933567)
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/GoodArea" unique_id=1950018756]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="PerfectArea" type="Area2D" parent="HitArea" unique_id=1215332619]
-scale = Vector2(-0.5953481, -0.5953481)
+position = Vector2(7.5158525, 0)
+scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/PerfectArea" unique_id=866200848]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="FailArea" type="Area2D" parent="HitArea" unique_id=1136206067]
-position = Vector2(-12.0649185, 0.39557114)
+position = Vector2(-8.306993, 0.39557114)
 scale = Vector2(0.5516987, 0.5516987)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea/FailArea" unique_id=1701005794]
@@ -76,27 +77,28 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_2irst")
 
 [node name="OkayArea" type="Area2D" parent="HitArea2" unique_id=1752395513]
-position = Vector2(14.042776, 0.19778557)
-scale = Vector2(0.43553934, 0.43553934)
+position = Vector2(0.3955719, 0.19778557)
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/OkayArea" unique_id=410283886]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="GoodArea" type="Area2D" parent="HitArea2" unique_id=2018293684]
-position = Vector2(7.9114237, 0.5933567)
-scale = Vector2(-0.16968697, -0.16968697)
+position = Vector2(14.636133, 0.5933567)
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/GoodArea" unique_id=1420191268]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="PerfectArea" type="Area2D" parent="HitArea2" unique_id=1191320878]
-scale = Vector2(-0.5953481, -0.5953481)
+position = Vector2(7.5158525, 0)
+scale = Vector2(0.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/PerfectArea" unique_id=1540784107]
 shape = SubResource("CircleShape2D_m50do")
 
 [node name="FailArea" type="Area2D" parent="HitArea2" unique_id=239985784]
-position = Vector2(-12.0649185, 0.39557114)
+position = Vector2(-8.306993, 0.39557114)
 scale = Vector2(0.5516987, 0.5516987)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2/FailArea" unique_id=1103408180]
@@ -116,6 +118,13 @@ offset_top = -33.0
 offset_right = 1.0
 offset_bottom = -2.0
 text = "Jugar"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=304050822]
+position = Vector2(557, 0)
+
+[node name="Note" parent="." unique_id=400096373 instance=ExtResource("3_j5yw3")]
+position = Vector2(217, 98)
+scale = Vector2(5, 5)
 
 [connection signal="area_entered" from="HitArea/OkayArea" to="HitArea" method="_on_okay_area_area_entered"]
 [connection signal="area_exited" from="HitArea/OkayArea" to="HitArea" method="_on_okay_area_area_exited"]
