@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wliges684vl5"
+path="res://.godot/imported/LOOP West Coast Whistle House (juanjo_sound).wav-d5000099a3ad1ce3871d9617ee964d12.sample"
+
+[deps]
+
+source_file="res://Music/LOOP West Coast Whistle House (juanjo_sound).wav"
+dest_files=["res://.godot/imported/LOOP West Coast Whistle House (juanjo_sound).wav-d5000099a3ad1ce3871d9617ee964d12.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

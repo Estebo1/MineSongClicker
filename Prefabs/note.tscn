@@ -1,20 +1,45 @@
 [gd_scene format=3 uid="uid://bb6bjthymwv1b"]
 
 [ext_resource type="Script" uid="uid://cbr7ofwdykwmp" path="res://Scripts/note.gd" id="1_t7k46"]
-[ext_resource type="Texture2D" uid="uid://27dktnfjbl8n" path="res://Sprites/Icons/1 Icons/Icons_01.png" id="2_nerg5"]
+[ext_resource type="Texture2D" uid="uid://dx6xisl0t5nxy" path="res://Sprites/Icons/1 Icons/Icons_07.png" id="2_t7k46"]
+[ext_resource type="Texture2D" uid="uid://sx33x65ysebu" path="res://Sprites/Icons/1 Icons/Icons_12.png" id="3_nerg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m50do"]
 
-[node name="Note" type="Area2D" unique_id=400096373 node_paths=PackedStringArray("collisionShape")]
-scale = Vector2(10, 10)
+[node name="Note" type="Area2D" unique_id=400096373 groups=["note"]]
+scale = Vector2(5, 5)
 script = ExtResource("1_t7k46")
-collisionShape = NodePath("CollisionShape2D")
+spawn_x = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881825096]
-position = Vector2(0.100001335, 0.100001335)
-scale = Vector2(0.446875, 0.446875)
-texture = ExtResource("2_nerg5")
+position = Vector2(0, 0.20000029)
+scale = Vector2(0.30000004, 0.33437502)
+texture = ExtResource("2_t7k46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=251249863]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_m50do")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1883341621]
+emitting = false
+texture = ExtResource("3_nerg5")
+one_shot = true
+lifetime_randomness = 0.48
+emission_shape = 1
+emission_sphere_radius = 13.07
+particle_flag_align_y = true
+gravity = Vector2(0, 50)
+
+[node name="Timer" type="Timer" parent="." unique_id=103125916]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=135509819]
+scale = Vector2(0.49999997, 0.49999997)
+
+[node name="Label" type="Label" parent="Node2D" unique_id=166959823]
+offset_left = -48.000004
+offset_top = -23.2
+offset_right = -8.000004
+offset_bottom = -0.20000076
+scale = Vector2(1.2425194, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwk3f6lt5bycs"
+path="res://.godot/imported/LOOP Shady Fella (juanjo_sound).wav-ab8cb9be6640efccacb17b6734ce67de.sample"
+
+[deps]
+
+source_file="res://Music/LOOP Shady Fella (juanjo_sound).wav"
+dest_files=["res://.godot/imported/LOOP Shady Fella (juanjo_sound).wav-ab8cb9be6640efccacb17b6734ce67de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
