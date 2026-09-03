@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var conductor = $Conductor
 @onready var note_pool = $NoteObjectPool 
-@onready var boton_play = $ButtonPlay 
+@onready var buttons = $Buttons 
+@onready var minigame = $Minigame 
 
 # Nodos de texto (Asegúrate de tener un Label llamado "VidasLabel" en tu escena)
-@onready var label_minerales = $Label
-@onready var label_combo = $Combo
-@onready var label_vidas = $VidasLabel 
+@onready var label_minerales = $MineralLabel
+@onready var label_combo = $ComboLabel
+@onready var label_vidas = $Minigame/VidasLabel 
 
 var playlist = [
 	{"audio": preload("res://Music/Cancion1.wav"), "bpm": 135},
@@ -20,19 +21,22 @@ var playlist = [
 	{"audio": preload("res://Music/Cancion8.wav"), "bpm": 140},
 	{"audio": preload("res://Music/Cancion9.wav"), "bpm": 124}
 ]
-
 func _ready():
 	conductor.finished.connect(_on_conductor_finished)
 	actualizar_ui()
+	if minigame:
+		minigame.hide()
 
 func _input(event):
 	if event.is_action_pressed("escape"):
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
 func _on_button_play_pressed() -> void:
-	if boton_play:
-		boton_play.hide() 
-	
+	if buttons:
+		buttons.hide() 
+	if minigame:
+		minigame.show()
+		
 	Global.resetear_estadisticas() # Reiniciamos vidas y minerales al jugar
 	actualizar_ui()
 	preparar_cancion_al_azar()
@@ -103,17 +107,15 @@ func fallar_nota():
 		game_over()
 
 func game_over():
-	# 1. Apagamos la música
 	conductor.stop()
-	
-	# 2. Desactivamos todas las notas que estén volando en la pantalla
 	for note in note_pool.get_children():
 		if note.has_method("DeactivateNote"):
 			note.DeactivateNote()
 			
-	# 3. Volvemos a mostrar el botón
-	if boton_play:
-		boton_play.show()
+	if buttons:
+		buttons.show()
+	if minigame:
+		minigame.hide()
 
 func actualizar_ui():
 	if label_minerales:
@@ -127,3 +129,9 @@ func actualizar_ui():
 			label_combo.text = str(Global.combo) + " combo!"
 		else:
 			label_combo.text = ""
+
+func shop_button():
+	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
+
+func menu_button():
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")

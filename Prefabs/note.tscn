@@ -7,9 +7,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_m50do"]
 
 [node name="Note" type="Area2D" unique_id=400096373 groups=["note"]]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 script = ExtResource("1_t7k46")
+target_x = -166.0
 spawn_x = 300.0
+top_lane_y = 46.0
+bottom_lane_y = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881825096]
 position = Vector2(0, 0.20000029)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dsl6ecfhtkm0g"]
+
+[ext_resource type="Texture2D" uid="uid://cnqvoug6mc8n0" path="res://Sprites/Map/Map/cave/tile_cave_bg_fluo.png" id="1_cqaad"]
+
+[resource]
+atlas = ExtResource("1_cqaad")
+region = Rect2(72, 75.415405, 47, 52.834793)

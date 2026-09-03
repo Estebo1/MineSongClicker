@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bf7owxnnulofp"]
+
+[ext_resource type="Texture2D" uid="uid://dsl6ecfhtkm0g" path="res://Sprites/Map/Map/cave/ProMineralRock.tres" id="1_p4pt3"]
+
+[node name="ProMineralRock" type="Node2D" unique_id=1446756997]
+modulate = Color(1.5598607, 1.5598607, 1.5598607, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=138804014]
+position = Vector2(212, -14)
+texture = ExtResource("1_p4pt3")

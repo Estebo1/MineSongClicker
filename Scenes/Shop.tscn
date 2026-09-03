@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://5q6fubc6ofn3"]
+
+[ext_resource type="Script" uid="uid://b7yipvwr5wi8e" path="res://Scenes/shop.gd" id="1_lagin"]
+[ext_resource type="Texture2D" uid="uid://bw3ylit5v7k70" path="res://Sprites/Map/Background/bg_cave.png" id="2_dael7"]
+[ext_resource type="Texture2D" uid="uid://djkjv7srniqas" path="res://Sprites/Map/Map/cave/tile_cave_bg_rock.png" id="3_gufdo"]
+
+[node name="Shop" type="Node2D" unique_id=749831401]
+script = ExtResource("1_lagin")
+
+[node name="Background" type="Node2D" parent="." unique_id=1015516488]
+
+[node name="BgCave" type="Sprite2D" parent="Background" unique_id=1065892471]
+modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+position = Vector2(172, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dael7")
+
+[node name="BgCave2" type="Sprite2D" parent="Background" unique_id=1188670975]
+modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+position = Vector2(-78, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dael7")
+
+[node name="BgCave3" type="Sprite2D" parent="Background" unique_id=259573916]
+modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+position = Vector2(-303, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dael7")
+
+[node name="TileCaveBgRock" type="Sprite2D" parent="Background" unique_id=505432902]
+modulate = Color(0.4849202, 0.4849202, 0.4849202, 0.91764706)
+position = Vector2(-18.000002, 166)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_gufdo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1351070816]
+
+[node name="ButtonReturn" type="Button" parent="." unique_id=1172150323]
+offset_left = 159.0
+offset_top = 84.0
+offset_right = 236.0
+offset_bottom = 115.0
+text = "Regresar"
+
+[connection signal="pressed" from="ButtonReturn" to="." method="return_button"]

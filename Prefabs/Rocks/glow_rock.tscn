@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d1tvm3xn3qs1p"]
+
+[ext_resource type="Texture2D" uid="uid://7e3ar3tqx4wk" path="res://Sprites/Map/Map/cave/GlowRock.tres" id="1_mf7gy"]
+
+[node name="GlowRock" type="Node2D" unique_id=2035694251]
+modulate = Color(1.1730844, 1.1730844, 1.1730844, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201976783]
+position = Vector2(212, -14)
+texture = ExtResource("1_mf7gy")

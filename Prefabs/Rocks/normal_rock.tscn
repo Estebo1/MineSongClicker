@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ca2hvywhwook1"]
+
+[ext_resource type="Texture2D" uid="uid://b81oxqbd6qfny" path="res://Sprites/Map/Map/cave/NormalRock.tres" id="1_g8toh"]
+
+[node name="NormalRock" type="Node2D" unique_id=919993922]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806340539]
+modulate = Color(2.910947, 2.910947, 2.910947, 1)
+position = Vector2(212, -14)
+texture = ExtResource("1_g8toh")
