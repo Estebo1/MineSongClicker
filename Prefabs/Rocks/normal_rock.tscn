@@ -1,10 +1,28 @@
 [gd_scene format=3 uid="uid://ca2hvywhwook1"]
 
 [ext_resource type="Texture2D" uid="uid://b81oxqbd6qfny" path="res://Sprites/Map/Map/cave/NormalRock.tres" id="1_g8toh"]
+[ext_resource type="Script" uid="uid://ddyrnrkcsc3cf" path="res://Prefabs/Rocks/rock.gd" id="1_u7v0f"]
+[ext_resource type="Texture2D" uid="uid://7sf3gqh3vaf8" path="res://Sprites/Icons/1 Icons/Icons_35.png" id="3_gq2kq"]
 
 [node name="NormalRock" type="Node2D" unique_id=919993922]
+script = ExtResource("1_u7v0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806340539]
 modulate = Color(2.910947, 2.910947, 2.910947, 1)
 position = Vector2(212, -14)
 texture = ExtResource("1_g8toh")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=690522263]
+texture = ExtResource("3_gq2kq")
+lifetime = 0.5
+explosiveness = 0.12
+randomness = 0.23
+emission_shape = 1
+emission_sphere_radius = 13.4
+direction = Vector2(1, 1)
+gravity = Vector2(100, 200)
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+angle_max = 25.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
