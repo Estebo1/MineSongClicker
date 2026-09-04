@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://dhvth74aus2cx"]
 
 [ext_resource type="Script" uid="uid://bhw40eekshfsi" path="res://Scripts/Game.gd" id="1_7lihs"]
-[ext_resource type="Texture2D" uid="uid://d4enkd5efyppb" path="res://Sprites/Tools/Knife/Primitive_Knife-1.png" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://bw3ylit5v7k70" path="res://Sprites/Map/Background/bg_cave.png" id="2_bf53h"]
 [ext_resource type="Texture2D" uid="uid://djkjv7srniqas" path="res://Sprites/Map/Map/cave/tile_cave_bg_rock.png" id="3_71axn"]
 [ext_resource type="PackedScene" uid="uid://bb6bjthymwv1b" path="res://Prefabs/note.tscn" id="3_j5yw3"]
+[ext_resource type="Texture2D" uid="uid://bqd7mhfov34ev" path="res://Sprites/Tools/Pickaxe/Primitive_Pickaxe-3.png" id="4_3so38"]
 [ext_resource type="Script" uid="uid://cpeyrmpv60jue" path="res://Scripts/NoteHitter.gd" id="4_b2bpf"]
 [ext_resource type="Script" uid="uid://d1ewsb8u1h7u4" path="res://Scripts/NoteObjectPool.gd" id="4_kldst"]
 [ext_resource type="Script" uid="uid://bhbd61aurmh2k" path="res://Scripts/Conductor.gd" id="5_7lihs"]
@@ -18,25 +18,88 @@ data = PackedByteArray("SUQzAwAAAAAQI1RBTEIAAAAjAAAB//4jAGwAbwBvAHAAdABvAGIAZQBy
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m50do"]
 
+[sub_resource type="Animation" id="Animation_wxwew"]
+resource_name = "FailedDown"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_3so38"]
+resource_name = "FailedNote"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666668, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(18.892, 0, 18.892, 0.392), Color(18.892157, 0, 18.892157, 0.7294118), Color(18.892157, 0, 18.892157, 0.39215687), Color(18.892157, 0, 18.892157, 0.7294118), Color(18.892157, 0, 18.892157, 0.39215687), Color(18.892157, 0, 18.892157, 0.7294118), Color(18.892157, 0, 18.892157, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_acvyw"]
+resource_name = "PerfectNote"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0035055913, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.99215686, 1, 0.39215687), Color(18.892157, 18.892157, 0, 1), Color(1, 0.99215686, 1, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_3cx6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.7977293, 0.7977293, 0.7977293, 0.39215687)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxwew"]
+_data = {
+&"FailedDown": SubResource("Animation_wxwew"),
+&"FailedNote": SubResource("Animation_3so38"),
+&"PerfectNote": SubResource("Animation_acvyw"),
+&"RESET": SubResource("Animation_3cx6b")
+}
+
 [node name="Game" type="Node2D" unique_id=749831401]
 script = ExtResource("1_7lihs")
 
 [node name="Background" type="Node2D" parent="." unique_id=1015516488]
+texture_filter = 1
 
 [node name="BgCave" type="Sprite2D" parent="Background" unique_id=1065892471]
 modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+texture_filter = 1
 position = Vector2(172, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_bf53h")
 
 [node name="BgCave2" type="Sprite2D" parent="Background" unique_id=1188670975]
 modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+texture_filter = 1
 position = Vector2(-78, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("2_bf53h")
 
 [node name="BgCave3" type="Sprite2D" parent="Background" unique_id=259573916]
 modulate = Color(0.74726784, 0.24471483, 0.75039715, 0.41568628)
+texture_filter = 1
 position = Vector2(-303, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("2_bf53h")
@@ -48,10 +111,11 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_71axn")
 
 [node name="PlayerPickaxe" type="Sprite2D" parent="." unique_id=1161173379]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(-70, -30)
 scale = Vector2(1.5781251, 1.8281249)
-texture = ExtResource("1_iukft")
+texture = ExtResource("4_3so38")
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1351070816]
 
@@ -67,6 +131,7 @@ bpm = 120
 position = Vector2(120, 24)
 
 [node name="ButtonPlay" type="Button" parent="Buttons" unique_id=1718939568]
+texture_filter = 1
 offset_left = -140.0
 offset_right = -63.0
 offset_bottom = 40.0
@@ -74,12 +139,14 @@ text = "Play"
 icon = ExtResource("8_3so38")
 
 [node name="ButtonStore" type="Button" parent="Buttons" unique_id=2023043310]
+texture_filter = 1
 offset_right = 86.0
 offset_bottom = 40.0
 text = "Store"
 icon = ExtResource("9_3cx6b")
 
 [node name="ButtonReturn" type="Button" parent="Buttons" unique_id=1172150323]
+texture_filter = 1
 offset_left = -270.0
 offset_right = -181.0
 offset_bottom = 40.0
@@ -94,30 +161,60 @@ position = Vector2(-286, 22)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("4_b2bpf")
 input_action = "carril_arriba"
+perfect_dist = 10.0
+good_dist = 20.0
+okay_dist = 30.0
+
+[node name="Line2" type="ColorRect" parent="Minigame/HitAreaUp" unique_id=642953320]
+offset_left = -4.000061
+offset_right = 35.99994
+offset_bottom = 40.0
+scale = Vector2(21.722563, 0.0353725)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/HitAreaUp" unique_id=571377274]
 scale = Vector2(5.05598, 5.05598)
 shape = SubResource("RectangleShape2D_m50do")
 
 [node name="Sprite2D" type="Sprite2D" parent="Minigame/HitAreaUp" unique_id=1407262209]
-modulate = Color(0, 1, 1, 0.8039216)
+modulate = Color(0.7977293, 0.7977293, 0.7977293, 0.39215687)
+self_modulate = Color(18.892157, 18.892157, 0, 1)
+texture_filter = 1
 scale = Vector2(2.52799, 2.52799)
 texture = ExtResource("6_2irst")
 
-[node name="HitAreaDown" type="Area2D" parent="Minigame" unique_id=773311771]
+[node name="AnimationNote" type="AnimationPlayer" parent="Minigame/HitAreaUp" unique_id=1214966367]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_wxwew")
+
+[node name="HitAreaDown" type="Area2D" parent="Minigame" unique_id=2027636991]
 position = Vector2(-286, 76)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("4_b2bpf")
 input_action = "carril_abajo"
+perfect_dist = 10.0
+good_dist = 20.0
+okay_dist = 30.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/HitAreaDown" unique_id=1643027913]
+[node name="Line2" type="ColorRect" parent="Minigame/HitAreaDown" unique_id=795518874]
+offset_left = -4.000061
+offset_right = 35.99994
+offset_bottom = 40.0
+scale = Vector2(21.722563, 0.0353725)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/HitAreaDown" unique_id=972245076]
 scale = Vector2(5.05598, 5.05598)
 shape = SubResource("RectangleShape2D_m50do")
 
-[node name="Sprite2D" type="Sprite2D" parent="Minigame/HitAreaDown" unique_id=154241089]
-modulate = Color(0, 1, 1, 0.8039216)
+[node name="Sprite2D" type="Sprite2D" parent="Minigame/HitAreaDown" unique_id=29585798]
+modulate = Color(0.7977293, 0.7977293, 0.7977293, 0.39215687)
+self_modulate = Color(18.892157, 18.892157, 0, 1)
+texture_filter = 1
 scale = Vector2(2.52799, 2.52799)
 texture = ExtResource("6_2irst")
+
+[node name="AnimationNote" type="AnimationPlayer" parent="Minigame/HitAreaDown" unique_id=1554535709]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_wxwew")
 
 [node name="VidasLabel" type="Label" parent="Minigame" unique_id=573263870]
 offset_left = -354.0
