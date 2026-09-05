@@ -1,20 +1,18 @@
 extends Node2D
 
-var mineral_value : int = 0
+@export var mineral_value : float = 0
 var isActive = false
 var hit = false
 
 func _ready():
 	deactivate_rock()
 
-func setup_mineral(val: int):
-	mineral_value = val
-
 func activate_rock():
 	hit = false
 	isActive = true
 	show()
-	
+	if has_node("CPUParticles2D"):
+		$CPUParticles2D.emitting = false 
 	if has_node("Sprite2D"): $Sprite2D.visible = true
 	if has_node("CollisionShape2D"): $CollisionShape2D.set_deferred("disabled", false)
 	if has_node("Node2D"): $Node2D.position = Vector2.ZERO
@@ -36,6 +34,9 @@ func destroy():
 	await get_tree().create_timer(1.0).timeout
 	deactivate_rock()
 
+func setup_mineral(val: float):
+	mineral_value = val
+	
 func deactivate_rock():
 	isActive = false
 	hide()

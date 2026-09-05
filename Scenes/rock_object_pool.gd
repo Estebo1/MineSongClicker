@@ -9,10 +9,10 @@ var pools : Array = [] # Será un arreglo de arreglos (un pool por cada mineral)
 var active_queue : Array = [] 
 
 var minerals_data = [
-	{"name": "MineralComun", "value": 1, "weight": 60, "scene_index": 0}, # 60%
-	{"name": "MineralRaro",  "value": 2, "weight": 25, "scene_index": 1}, # 25%
-	{"name": "MineralEpico", "value": 3, "weight": 10, "scene_index": 2}, # 10%
-	{"name": "MineralPro","value": 5, "weight": 5,  "scene_index": 3}  # 5%
+	{"name": "MineralComun", "value": .01, "weight": 70, "scene_index": 0}, 
+	{"name": "MineralRaro",  "value": .03, "weight": 15, "scene_index": 1}, 
+	{"name": "MineralEpico", "value": .05, "weight": 10, "scene_index": 2}, 
+	{"name": "MineralPro","value": .08, "weight": 5,  "scene_index": 3}  
 ]
 var total_weight = 100
 
@@ -57,8 +57,8 @@ func spawn_rock_at_end(queue_index: int):
 		new_rock.activate_rock()
 		active_queue.append(new_rock)
 
-func mine_first_rock():
-	if active_queue.is_empty(): return
+func mine_first_rock() -> float:
+	if active_queue.is_empty(): return 0
 	
 	var front_rock = active_queue.pop_front()
 	var valor_obtenido = front_rock.mineral_value

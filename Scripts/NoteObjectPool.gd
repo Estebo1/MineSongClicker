@@ -12,13 +12,11 @@ func _ready() -> void:
 		pool.append(note_instance)
 
 func spawn_note(lane: int):
-	# Buscamos una nota apagada y la prendemos
 	for note in pool:
 		if not note.isActive:
 			note.ActivateNote(lane)
 			return note
 			
-	# Si todas están ocupadas, creamos una nueva
 	var new_note = note_scene.instantiate()
 	add_child(new_note)
 	pool.append(new_note) 

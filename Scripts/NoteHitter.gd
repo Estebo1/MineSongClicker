@@ -3,9 +3,9 @@ extends Area2D
 var current_note = null
 @export var input_action: String = ""
 
-@export var perfect_dist: float = 20.0
-@export var good_dist: float = 40.0
-@export var okay_dist: float = 60.0
+@export var perfect_dist: float = 5.0
+@export var good_dist: float = 30.0
+@export var okay_dist: float = 50.0
 
 @onready var game = get_tree().current_scene 
 @onready var animation_player: AnimationPlayer = $AnimationNote
@@ -19,7 +19,6 @@ func _process(_delta: float) -> void:
 				game.increment_score(0)
 				return
 				
-			# Calculamos distancia
 			var dist = abs(current_note.global_position.x - global_position.x)
 			
 			if dist <= perfect_dist:
@@ -41,7 +40,7 @@ func _process(_delta: float) -> void:
 
 			else:
 				print("Resultado: FAIL - Distancia muy grande")
-				play_note_animation("PerfectNote")
+				play_note_animation("FailedNote")
 				game.increment_score(0)
 				
 			current_note = null

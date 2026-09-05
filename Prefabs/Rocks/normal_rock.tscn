@@ -6,6 +6,7 @@
 
 [node name="NormalRock" type="Node2D" unique_id=919993922]
 script = ExtResource("1_u7v0f")
+mineral_value = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1806340539]
 modulate = Color(2.910947, 2.910947, 2.910947, 1)

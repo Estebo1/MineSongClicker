@@ -7,6 +7,7 @@
 [node name="GlowRock" type="Node2D" unique_id=2035694251]
 modulate = Color(1.1730844, 1.1730844, 1.1730844, 1)
 script = ExtResource("1_5na6g")
+mineral_value = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201976783]
 texture = ExtResource("1_mf7gy")

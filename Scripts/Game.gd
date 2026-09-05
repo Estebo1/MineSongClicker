@@ -5,10 +5,11 @@ extends Node2D
 @onready var buttons = $Buttons 
 @onready var minigame = $Minigame 
 
-# Nodos de texto (Asegúrate de tener un Label llamado "VidasLabel" en tu escena)
 @onready var label_minerales = $MineralLabel
 @onready var label_combo = $ComboLabel
 @onready var label_vidas = $Minigame/VidasLabel 
+@onready var rockPool = $RockObjectPool
+@onready var pickaxe = $PlayerPickaxe
 
 var playlist = [
 	{"audio": preload("res://Music/Cancion1.wav"), "bpm": 135},
@@ -37,7 +38,7 @@ func _on_button_play_pressed() -> void:
 	if minigame:
 		minigame.show()
 		
-	Global.resetear_estadisticas() # Reiniciamos vidas y minerales al jugar
+	Global.resetear_estadisticas() 
 	actualizar_ui()
 	preparar_cancion_al_azar()
 	conductor.play_with_beat_offset(0)
@@ -85,9 +86,12 @@ func _spawn_notes(to_spawn: int):
 		note_pool.spawn_note(1)
 
 func increment_score(by: int):
+	pickaxe.mine()
 	if by > 0: 
 		Global.combo += 1
-		Global.minerales += by  # Sumamos los minerales (1, 2 o 3)
+		
+		var valor_roca = rockPool.mine_first_rock()
+		Global.minerales += (by * valor_roca)
 		if Global.combo > Global.max_combo:
 			Global.max_combo = Global.combo
 	else:

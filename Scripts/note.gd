@@ -80,13 +80,16 @@ func destroy(score: int):
 	if has_node("Node2D/Label"):
 		if score == 3:
 			$Node2D/Label.text = "Perfect"
-			$Node2D/Label.modulate = Color("f6d6bd")
+			$Node2D/Label.modulate = Color("gold")
 		elif score == 2:
 			$Node2D/Label.text = "GOOD"
-			$Node2D/Label.modulate = Color("c3a38a")
+			$Node2D/Label.modulate = Color("green")
 		elif score == 1:
 			$Node2D/Label.text = "OKAY"
-			$Node2D/Label.modulate = Color("997577")
+			$Node2D/Label.modulate = Color("blue")
+		else:
+			$Node2D/Label.text = "Failes"
+			$Node2D/Label.modulate = Color("red")
 	if has_node("Timer"): $Timer.start()
 
 func _on_Timer_timeout():
