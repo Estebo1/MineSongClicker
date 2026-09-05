@@ -3,7 +3,7 @@ extends Area2D
 var current_note = null
 @export var input_action: String = ""
 
-@export var perfect_dist: float = 5.0
+@export var perfect_dist: float = 10.0
 @export var good_dist: float = 30.0
 @export var okay_dist: float = 50.0
 

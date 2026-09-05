@@ -339,6 +339,3 @@ theme_override_font_sizes/font_size = 12
 text = "Minerals:"
 
 [connection signal="pressed" from="ButtonReturn" to="." method="return_button"]
-[connection signal="pressed" from="Vidas/Button" to="Vidas" method="button_add"]
-[connection signal="pressed" from="Minerales/Button" to="Minerales" method="button_add"]
-[connection signal="pressed" from="Picados/Button" to="Picados" method="button_add"]

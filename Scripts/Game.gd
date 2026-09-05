@@ -7,6 +7,7 @@ extends Node2D
 
 @onready var label_minerales = $MineralLabel
 @onready var label_combo = $ComboLabel
+@onready var label_max_combo = $MaxComboLabel
 @onready var label_vidas = $Minigame/VidasLabel 
 @onready var rockPool = $RockObjectPool
 @onready var pickaxe = $PlayerPickaxe
@@ -89,9 +90,9 @@ func increment_score(by: int):
 	pickaxe.mine()
 	if by > 0: 
 		Global.combo += 1
-		
-		var valor_roca = rockPool.mine_first_rock()
-		Global.minerales += (by * valor_roca)
+		for i in range(1, Global.picos):
+			var valor_roca = rockPool.mine_first_rock() + (1 * Global.mineral_multiplier )
+			Global.minerales += (by * valor_roca)
 		if Global.combo > Global.max_combo:
 			Global.max_combo = Global.combo
 	else:
@@ -133,7 +134,8 @@ func actualizar_ui():
 			label_combo.text = str(Global.combo) + " combo!"
 		else:
 			label_combo.text = ""
-
+	if label_max_combo:
+		label_max_combo.text = "Max COMBO: " + str(Global.max_combo)
 func shop_button():
 	get_tree().change_scene_to_file("res://Scenes/Shop.tscn")
 

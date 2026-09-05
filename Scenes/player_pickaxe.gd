@@ -1,5 +1,6 @@
 extends Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+var mineral_Amount : float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

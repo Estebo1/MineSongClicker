@@ -10,9 +10,9 @@ var active_queue : Array = []
 
 var minerals_data = [
 	{"name": "MineralComun", "value": .01, "weight": 70, "scene_index": 0}, 
-	{"name": "MineralRaro",  "value": .03, "weight": 15, "scene_index": 1}, 
-	{"name": "MineralEpico", "value": .05, "weight": 10, "scene_index": 2}, 
-	{"name": "MineralPro","value": .08, "weight": 5,  "scene_index": 3}  
+	{"name": "MineralRaro",  "value": .02, "weight": 15, "scene_index": 1}, 
+	{"name": "MineralEpico", "value": .03, "weight": 10, "scene_index": 2}, 
+	{"name": "MineralPro","value": .04, "weight": 5,  "scene_index": 3}  
 ]
 var total_weight = 100
 
