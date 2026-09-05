@@ -1,6 +1,74 @@
 [gd_scene format=3 uid="uid://cj1njp2p3awpg"]
 
 [ext_resource type="Script" uid="uid://cvf2tpxx7ygqs" path="res://Scenes/menu.gd" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://bw3ylit5v7k70" path="res://Sprites/Map/Background/bg_cave.png" id="2_idohh"]
+[ext_resource type="Texture2D" uid="uid://djkjv7srniqas" path="res://Sprites/Map/Map/cave/tile_cave_bg_rock.png" id="3_wfhf6"]
+[ext_resource type="Texture2D" uid="uid://db85lh28atix7" path="res://Sprites/Icons/1 Icons/Icons_08.png" id="4_3jcrr"]
+[ext_resource type="Texture2D" uid="uid://b81oxqbd6qfny" path="res://Sprites/Map/Map/cave/NormalRock.tres" id="4_wfhf6"]
+[ext_resource type="Texture2D" uid="uid://bqd7mhfov34ev" path="res://Sprites/Tools/Pickaxe/Primitive_Pickaxe-3.png" id="5_aobxe"]
+[ext_resource type="Texture2D" uid="uid://ucptynrfaedb" path="res://Sprites/Map/Map/cave/tile_cave_rail.png" id="6_ab40c"]
+
+[sub_resource type="Animation" id="Animation_wfhf6"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(177, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3jcrr"]
+resource_name = "miningMenu"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.65, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(177, 197), Vector2(176.99998, 173.99998), Vector2(195, 189.00002), Vector2(177, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.65, 0.79, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.3386675, 0.11519173, -0.7574729, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aobxe"]
+_data = {
+&"RESET": SubResource("Animation_wfhf6"),
+&"miningMenu": SubResource("Animation_3jcrr")
+}
 
 [node name="Menu" type="Control" unique_id=352346712]
 layout_mode = 3
@@ -11,12 +79,60 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3kf3n")
 
+[node name="BgCave" type="Sprite2D" parent="." unique_id=265787595]
+modulate = Color(0, 0.6602917, 1.1704104, 0.25882354)
+position = Vector2(388, 140)
+scale = Vector2(1.56, 1.6800005)
+texture = ExtResource("2_idohh")
+
+[node name="BgCave2" type="Sprite2D" parent="." unique_id=1987088511]
+modulate = Color(0, 0.6602917, 1.1704104, 0.25882354)
+position = Vector2(196, 140)
+scale = Vector2(1.56, 1.6800005)
+texture = ExtResource("2_idohh")
+
+[node name="BgCave3" type="Sprite2D" parent="." unique_id=58309849]
+modulate = Color(0, 0.6602917, 1.1704104, 0.25882354)
+position = Vector2(-21, 140)
+scale = Vector2(1.56, 1.6800005)
+texture = ExtResource("2_idohh")
+
+[node name="Icons08" type="Sprite2D" parent="." unique_id=708126493]
+position = Vector2(440, 192)
+scale = Vector2(3, 3)
+texture = ExtResource("4_3jcrr")
+
+[node name="NormalRock" type="Sprite2D" parent="." unique_id=1631311802]
+position = Vector2(233, 204)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_wfhf6")
+
+[node name="TileCaveBgRock" type="Sprite2D" parent="." unique_id=1379469842]
+modulate = Color(0.5553293, 0.5553293, 0.5553293, 1)
+position = Vector2(240.99998, 295)
+scale = Vector2(1.1054084, 1.2541231)
+texture = ExtResource("3_wfhf6")
+
 [node name="Button" type="Button" parent="." unique_id=320701614]
 layout_mode = 0
-offset_left = 126.0
-offset_top = 122.0
-offset_right = 134.0
-offset_bottom = 130.0
-text = "Jugar"
+offset_left = 80.0
+offset_top = 92.0
+offset_right = 139.0
+offset_bottom = 127.0
+text = "Play"
+
+[node name="PrimitivePickaxe3" type="Sprite2D" parent="." unique_id=380456978]
+position = Vector2(177, 197)
+scale = Vector2(2, 2)
+texture = ExtResource("5_aobxe")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PrimitivePickaxe3" unique_id=1312759376]
+libraries/ = SubResource("AnimationLibrary_aobxe")
+autoplay = &"miningMenu"
+
+[node name="TileCaveRail" type="Sprite2D" parent="." unique_id=1680456508]
+position = Vector2(337, 359)
+texture = ExtResource("6_ab40c")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

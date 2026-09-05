@@ -90,9 +90,9 @@ func increment_score(by: int):
 	pickaxe.mine()
 	if by > 0: 
 		Global.combo += 1
-		for i in range(1, Global.picos):
-			var valor_roca = rockPool.mine_first_rock() + (1 * Global.mineral_multiplier )
-			Global.minerales += (by * valor_roca)
+		for i in range(0, Global.picos):
+			var valor_roca = rockPool.mine_first_rock()
+			Global.minerales += (valor_roca) + (1 * Global.mineral_multiplier )
 		if Global.combo > Global.max_combo:
 			Global.max_combo = Global.combo
 	else:
@@ -124,7 +124,7 @@ func game_over():
 
 func actualizar_ui():
 	if label_minerales:
-		label_minerales.text = "Minerales: " + str(Global.minerales)
+		label_minerales.text = "Minerales: " + str(Global.minerales).pad_decimals(2)
 		
 	if label_vidas:
 		label_vidas.text = "Vidas: " + str(Global.vidas)

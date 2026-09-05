@@ -338,6 +338,31 @@ offset_bottom = -92.0
 theme_override_font_sizes/font_size = 12
 text = "Minerals:"
 
+[node name="VidaLabel" type="Label" parent="." unique_id=1839603833]
+offset_left = -217.0
+offset_top = -56.0
+offset_right = -163.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 10
+text = "+1 Life"
+
+[node name="MineralLabel" type="Label" parent="." unique_id=826633444]
+offset_left = -219.0
+offset_top = -15.0
+offset_right = -147.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "+.02 Mineral
+    multiplier"
+
+[node name="PicoLabel" type="Label" parent="." unique_id=1649827514]
+offset_left = -217.0
+offset_top = 40.0
+offset_right = -145.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 10
+text = "+1 Pickaxe"
+
 [connection signal="pressed" from="ButtonReturn" to="." method="return_button"]
 [connection signal="pressed" from="Vidas/Button" to="Vidas" method="button_add"]
 [connection signal="pressed" from="Minerales/Button" to="Minerales" method="button_add"]

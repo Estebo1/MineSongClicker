@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func UpdateMineral():
-	mineral_label.text = "Minerals: " + str(Global.minerales)
+	mineral_label.text = "Minerals: " + str(Global.minerales).pad_decimals(2)
 
 func return_button():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

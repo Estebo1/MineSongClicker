@@ -55,7 +55,8 @@ func button_add():
 		if typeGiver == TypeGiver.MINERAL: 
 			Global.mineral_cost *= 2 
 			cost = Global.mineral_cost
-			Global.mineral_Upgrade += 1 
+			Global.mineral_Upgrade += 1
+			Global.mineral_multiplier += .02
 			Global.resetear_estadisticas()
 			turn_mineral()
 			
