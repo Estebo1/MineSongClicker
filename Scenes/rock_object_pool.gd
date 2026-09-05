@@ -23,7 +23,7 @@ func _ready() -> void:
 		for j in range(visible_rocks + 2):
 			if rock_scenes[i] != null:
 				var rock_instance = rock_scenes[i].instantiate()
-				#add_child(rock_instance)
+				add_child(rock_instance)
 				rock_instance.setup_mineral(minerals_data[i]["value"]) 
 				pools[i].append(rock_instance)
 	

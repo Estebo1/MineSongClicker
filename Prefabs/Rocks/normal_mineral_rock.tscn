@@ -9,10 +9,10 @@ modulate = Color(1.6608336, 1.6608336, 1.6608336, 1)
 script = ExtResource("1_orgi7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137329230]
-position = Vector2(212, -14)
 texture = ExtResource("1_2p7va")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=614736456]
+emitting = false
 texture = ExtResource("3_6lxu8")
 lifetime = 0.5
 explosiveness = 0.12

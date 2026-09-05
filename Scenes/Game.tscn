@@ -259,8 +259,8 @@ note_scene = ExtResource("3_j5yw3")
 script = ExtResource("13_3cx6b")
 rock_scenes = Array[PackedScene]([ExtResource("14_4q8tf"), ExtResource("15_x3xnh"), ExtResource("16_8r6kd"), ExtResource("17_tfod6")])
 visible_rocks = 10
-distance_between_rocks = 10.0
-start_pos = Vector2(300, 0)
+distance_between_rocks = 33.0
+start_pos = Vector2(0, -20)
 
 [connection signal="beat" from="Conductor" to="." method="_on_conductor_beat"]
 [connection signal="measure_changed" from="Conductor" to="." method="_on_conductor_measure"]
