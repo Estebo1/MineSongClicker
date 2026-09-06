@@ -13,15 +13,24 @@ extends Node2D
 @onready var pickaxe = $PlayerPickaxe
 
 var playlist = [
-	{"audio": preload("res://Music/Cancion1.wav"), "bpm": 135},
-	{"audio": preload("res://Music/Cancion2.wav"), "bpm": 127},
-	{"audio": preload("res://Music/Cancion3.wav"), "bpm": 140},
-	{"audio": preload("res://Music/Cancion4.wav"), "bpm": 124},
-	{"audio": preload("res://Music/Cancion5.wav"), "bpm": 130},
-	{"audio": preload("res://Music/Cancion6.wav"), "bpm": 142},
-	{"audio": preload("res://Music/Cancion7.wav"), "bpm": 128},
-	{"audio": preload("res://Music/Cancion8.wav"), "bpm": 140},
-	{"audio": preload("res://Music/Cancion9.wav"), "bpm": 124}
+	{"audio": preload("res://Music/Cancion1.wav"), "bpm": 140},
+	{"audio": preload("res://Music/Cancion2.wav"), "bpm": 124},
+	{"audio": preload("res://Music/Cancion3.wav"), "bpm": 130},
+	{"audio": preload("res://Music/Cancion4.wav"), "bpm": 142},
+	{"audio": preload("res://Music/Cancion5.wav"), "bpm": 128},
+	{"audio": preload("res://Music/Cancion6.wav"), "bpm": 140},
+	{"audio": preload("res://Music/Cancion7.wav"), "bpm": 124},
+	{"audio": preload("res://Music/Cancion8.wav"), "bpm": 130},
+	{"audio": preload("res://Music/Cancion9.wav"), "bpm": 142},
+	{"audio": preload("res://Music/Cancion10.wav"), "bpm": 130},
+	{"audio": preload("res://Music/Cancion11.wav"), "bpm": 123},
+	{"audio": preload("res://Music/Cancion12.wav"), "bpm": 127},
+	{"audio": preload("res://Music/Cancion13.wav"), "bpm": 130},
+	{"audio": preload("res://Music/Cancion14.wav"), "bpm": 135},
+	{"audio": preload("res://Music/Cancion15.wav"), "bpm": 135},
+	{"audio": preload("res://Music/Cancion16.wav"), "bpm": 130},
+	{"audio": preload("res://Music/Cancion17.wav"), "bpm": 124},
+	{"audio": preload("res://Music/Cancion18.wav"), "bpm": 130}
 ]
 func _ready():
 	conductor.finished.connect(_on_conductor_finished)
@@ -63,10 +72,10 @@ func _on_conductor_measure(position):
 	var notas_a_crear = 0
 	
 	if progress < 0.10 or progress > 0.90:
-		if probabilidad < 50: notas_a_crear = 0
+		if probabilidad < 30: notas_a_crear = 0
 		else: notas_a_crear = 1
 	elif progress >= 0.10 and progress < 0.60:
-		if probabilidad < 30: notas_a_crear = 0
+		if probabilidad < 20: notas_a_crear = 0
 		elif probabilidad < 60: notas_a_crear = 1
 		else: notas_a_crear = 2
 	else:
